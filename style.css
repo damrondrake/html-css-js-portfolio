@@ -179,6 +179,42 @@ section {
     text-align: center;
 }
 
+.section__text > span {
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    overflow: hidden;
+    height: 2.8rem;
+    font-size: 1.7rem;
+}
+
+.section__text > span > span {
+    display: block;
+    animation: anim 7s infinite ease;
+    animation-delay: 0s;
+    margin-top: 0.5px;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateY(0%);
+
+    }
+    25% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(-200%);
+
+    }
+    75% {
+        transform: translateY(-300%);
+    }
+    100% {
+        transform: translateY(-400%);
+    }
+}
+
 .section__text p {
     font-weight: 600;
 }
