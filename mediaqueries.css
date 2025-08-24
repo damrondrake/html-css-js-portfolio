@@ -94,4 +94,12 @@
     .text-container {
         text-align: justify;
     }
+    .section__text > span {
+        height: 2.2rem;
+        font-size: 1.2rem;
+    }
+    .section__text > span > span {
+        height: 2.2rem;
+        line-height: 2.2rem;
+    }
 }
