@@ -1,14 +1,9 @@
-@media screen and (max-width: 1400px) {
-    #profile {
-        height: 83vh;
-        margin-bottom: 6rem;
-    }
-    .about-containers {
-        flex-wrap: wrap;
-    }
-}
+/* ============================================================
+   RESPONSIVE — mobile / tablet / desktop
+   ============================================================ */
 
-@media screen and (max-width: 1200px) {
+/* Tablet & down: collapse hero/about to single column, switch to hamburger */
+@media screen and (max-width: 900px) {
     #desktop-nav {
         display: none;
     }
@@ -20,86 +15,100 @@
     .hamburger-icon {
         display: flex;
     }
-    #experience, .experience-details-container {
-        margin-top: 2rem;
+
+    /* Stack the hero */
+    #profile {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding-top: clamp(2rem, 6vw, 3.5rem);
+        gap: 2rem;
     }
-    #profile, .section-container {
-        display: block;
+
+    .section__pic-container {
+        margin: 0 auto;
     }
+
+    /* Stack about: photo above text */
+    .section-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about .section__pic-container {
+        margin: 0 auto;
+    }
+
+    .text-container {
+        text-align: left;
+    }
+
+    /* Hide the floating scroll arrows once layout stacks */
     .arrow {
         display: none;
     }
-    section, .section-container {
-        height: fit-content;
-    }
-    section {
-        margin: 0 5%;
-    }
-    .section__pic-container {
-        width: 275px;
-        height: 275px;
-        margin: 0 auto 2rem;
-    }
-    .about-containers {
-        margin-top: 0;
-    }
 }
 
+/* Small tablet / large phone */
 @media screen and (max-width: 600px) {
-    #contact, footer {
-        height: 40vh;
+    :root {
+        --section-y: clamp(2.5rem, 9vw, 3.25rem);
     }
-    #profile {
-        height: 83vh;
-        margin-bottom: 0;
+
+    .logo {
+        font-size: 1.25rem;
     }
+
+    /* Info cards stack */
+    .about-containers {
+        flex-direction: column;
+    }
+
+    /* Skill list reads full width */
+    .article-container {
+        gap: 1rem 1.5rem;
+    }
+
     article {
-        font-size: 1rem;
+        width: 8.5rem;
     }
-    footer nav {
-        height: fit-content;
-        margin-bottom: 2rem;
+
+    .experience-sub-title {
+        font-size: 1.15rem;
     }
-    .about-containers, .contact-info-upper-container, .btn-container {
+
+    /* Buttons go full width for easy tapping */
+    .btn-container {
         flex-wrap: wrap;
     }
-    .contact-info-container {
-        margin: 0;
+
+    .btn {
+        flex: 1 1 100%;
     }
-    .contact-info-container p, .nav-links li a {
-        font-size: 1rem;
+
+    .color-container .btn-container .btn {
+        flex: 1 1 0;
     }
-    .experience-sub-title {
-        font-size: 1.25rem;
-    }
-    .logo {
-        font-size: 1.5rem;
-    }
-    .nav-links {
+
+    .contact-info-upper-container {
         flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
+        align-items: flex-start;
+        gap: 0.75rem;
+        width: 100%;
     }
-    .section__pic-container {
-        width: auto;
-        height: 46vw;
-        justify-content: center;
-    }
-    .section__text__p2 {
-        font-size: 1.25rem;
-    }
-    .title {
-        font-size: 2rem;
-    }
+
     .text-container {
         text-align: justify;
     }
-    .section__text > span {
-        height: 2.2rem;
-        font-size: 1.2rem;
+}
+
+/* Narrow phones — keep the hero name from overflowing */
+@media screen and (max-width: 400px) {
+    .section__pic-container {
+        width: 78vw;
     }
-    .section__text > span > span {
-        height: 2.2rem;
-        line-height: 2.2rem;
+
+    #profile .title {
+        font-size: 2.2rem;
     }
 }
